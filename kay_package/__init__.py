@@ -1,1 +1,1 @@
-from .k_fun import *
+from .k_fun import Kfun

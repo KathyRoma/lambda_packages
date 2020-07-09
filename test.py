@@ -1,11 +1,13 @@
-import kay_package as kp
+import k_package as kp
 import pandas as pd
 
 df = pd.read_csv("test.csv") 
-mycols = ["Matching time","Alignment time"]
+mycols = ["Matching time", "Alignment time"]
 print("\nBEFORE\n")
 print(df[mycols[0]].head()) 
-for colname in mycols:
-    kp.convert_time(df[colname])
+
+km = kp.Kfun(df, mycols)
+km.convert_all_time()
+
 print("\nAFTER\n")    
-print(df[mycols[0]].head())
+print(km.dataframe[km.colnames[0]].head())
